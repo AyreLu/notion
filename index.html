@@ -23,8 +23,10 @@
             font-family: 'Advent Pro', sans-serif; /* 字體設置 */
             padding: 8px; /* 內邊距 */
             text-align: center; /* 文字居中對齊 */
-            margin: 7px auto; /* 外邊距，自動居中 */
+            margin: 8px auto; /* 外邊距，自動居中 */
             width: fit-content; /* 寬度根據內容自適應 */
+            background-color: transparent; /* 背景色透明 */
+            border: none; /* 去除邊框 */
         }
 
         /* 導航鏈接的樣式 */
@@ -33,22 +35,13 @@
             text-decoration: none; /* 去除下劃線 */
             text-transform: uppercase; /* 文字轉為大寫 */
             display: inline-block; /* 內聯塊級元素 */
-            padding: 6px; /* 內邊距 */
-        }
-
-        /* 背景色樣式 */
-        .background {
-            background-color: #ffe66f; /* 背景色 */
-        }
-
-        /* 邊框樣式 */
-        .border {
-            border: 3px solid #ffdc35; /* 邊框顏色 */
+            padding: 9px; /* 內邊距 */
+            transition: background-color 0.3s; /* 加入過渡效果 */
         }
 
         /* 當鼠標懸停時鏈接的樣式 */
         .navMenu a:hover {
-            color: #d09c0b; /* 懸停時的文字顏色 */
+            background-color: #0072E3; /* 懸停時的背景色 */
         }
     </style>
 </head>
@@ -56,7 +49,7 @@
 <body>
 
     <!-- 導航欄 -->
-    <nav class="navMenu border">
+    <nav class="navMenu">
         <!-- 每個導航鏈接都包含一個圖標和文字，並設置了一個 onclick 事件 -->
         <!-- 將 href 替換為目標 URL -->
         <a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> 主頁</a>
@@ -64,8 +57,8 @@
         <a id="notes" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> 資料庫</a>
         <a id="business" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-money-bill-wave"></i> 加班申請</a>
         <a id="tasks" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-calendar-week"></i> 版本測試</a>
-        <a id="tasks_cn" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> ph反饋更新</a>
-        <a id="tasks_ph" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> cn反饋更新</a>
+        <a id="tasks_cn" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> 菲站反饋更新</a>
+        <a id="tasks_ph" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> 陸站反饋更新</a>
     </nav>
 
     <script>
@@ -87,10 +80,10 @@
                 window.open("https://www.femascloud.com/photons/", '_blank').focus(); // 替換為加班申請的實際 URL
             else if (id == "tasks")
                 window.open("https://docs.google.com/spreadsheets/d/1H6RqB1sPKkFTQRT8oeEtMxXSVm0zVNDprRd7pvrz8yE/edit?gid=298914475#gid=298914475", '_blank').focus(); // 替換為版本測試的實際 URL
-            else if (id == "tasks_cn")
-                window.open("https://docs.google.com/spreadsheets/d/1BEdTvXvBnKqO3goIGomWYUOWzh8vYhoWyYQH4Xq4zsw/edit?gid=1718004242#gid=1718004242", '_blank').focus(); // 替換為cn反饋更新的實際 URL
             else if (id == "tasks_ph")
-                window.open("https://docs.google.com/spreadsheets/d/1QIQNFXe8dPf0RBkAZTZ6_PJZedd3YwOUpvsuW5NYVpM/edit?gid=1593614883#gid=1593614883", '_blank').focus(); // 替換為ph反饋更新的實際 URL
+                window.open("https://docs.google.com/spreadsheets/d/1QIQNFXe8dPf0RBkAZTZ6_PJZedd3YwOUpvsuW5NYVpM/edit?gid=1593614883#gid=1593614883", '_blank').focus(); // 替換為菲站反饋更新的實際 URL
+            else if (id == "tasks_cn")
+                window.open("https://docs.google.com/spreadsheets/d/1BEdTvXvBnKqO3goIGomWYUOWzh8vYhoWyYQH4Xq4zsw/edit?gid=1718004242#gid=1718004242", '_blank').focus(); // 替換為陸站反饋更新的實際 URL
         }
     </script>
 </body>
