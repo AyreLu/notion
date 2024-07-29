@@ -53,13 +53,13 @@
         <!-- 每個導航鏈接都包含一個圖標和文字，並設置了一個 onclick 事件 -->
         <!-- 將 href 替換為目標 URL -->
         <a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> 主頁</a>
+        <a id="dindandon" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-mug-saucer"></i> 訂便當</a>
         <a id="resources" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-wrench"></i> 工作區</a>
         <a id="notes" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> 資料庫</a>
         <a id="business" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-money-bill-wave"></i> 加班申請</a>
         <a id="tasks" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-calendar-week"></i> 版本測試</a>
         <a id="tasks_cn" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> 菲站反饋更新</a>
         <a id="tasks_ph" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> 陸站反饋更新</a>
-        <a id="dindandon" onclick="navigate(this.id)" href="#"> <i class="icon-shopping-cart"></i> 訂便當</a>
     </nav>
 
     <script>
@@ -73,6 +73,8 @@
         function navigate(id) {
             if (id == 'home')
                 window.open("https://www.notion.so/PK-ea972993bc3c4598b014095ffec0edd5?pvs=4", '_blank').focus(); // 替換為主頁的實際 URL
+            else if (id == "dindandon")
+                window.open("https://dinbendon.net/do/login", '_blank').focus(); // 替換為訂便當的實際 URL
             else if (id == "resources")
                 window.open("https://www.notion.so/43c1714275d3469a94d9407eef4ccac7?pvs=4", '_blank').focus(); // 替換為工作區的實際 URL
             else if (id == "notes")
