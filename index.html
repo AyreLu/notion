@@ -59,11 +59,12 @@
     <nav class="navMenu border">
         <!-- 每個導航鏈接都包含一個圖標和文字，並設置了一個 onclick 事件 -->
         <!-- 將 href 替換為目標 URL -->
-        <a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> 首頁</a>
+        <a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> 主頁</a>
         <a id="resources" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-wrench"></i> 工作區</a>
         <a id="notes" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> 資料庫</a>
-        <a id="tasks_cn" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> 測試表單cn</a>
-        <a id="tasks_ph" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> 測試表單ph</a>
+        <a id="tasks_cn" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> 菲站測試表</a>
+        <a id="tasks_ph" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> 陸站測試表</a>
+        <a id="tasks" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> 更新測試表</a>
     </nav>
 
     <script>
@@ -76,15 +77,17 @@
         // 定義導航函數，根據鏈接的 id 打開對應的 URL
         function navigate(id) {
             if (id == 'home')
-                window.open("https://www.notion.so/PK-ea972993bc3c4598b014095ffec0edd5?pvs=4", '_blank').focus(); // 替換為首頁的實際 URL
+                window.open("https://www.notion.so/PK-ea972993bc3c4598b014095ffec0edd5?pvs=4", '_blank').focus(); // 替換為主頁的實際 URL
             else if (id == "tasks_cn")
-                window.open("https://docs.google.com/spreadsheets/d/1BEdTvXvBnKqO3goIGomWYUOWzh8vYhoWyYQH4Xq4zsw/edit?gid=1718004242#gid=1718004242", '_blank').focus(); // 替換為測試表單cn的實際 URL
+                window.open("https://docs.google.com/spreadsheets/d/1BEdTvXvBnKqO3goIGomWYUOWzh8vYhoWyYQH4Xq4zsw/edit?gid=1718004242#gid=1718004242", '_blank').focus(); // 替換為陸站測試表的實際 URL
             else if (id == "tasks_ph")
-                window.open("https://docs.google.com/spreadsheets/d/1QIQNFXe8dPf0RBkAZTZ6_PJZedd3YwOUpvsuW5NYVpM/edit?gid=1593614883#gid=1593614883", '_blank').focus(); // 替換為測試表單ph的實際 URL
+                window.open("https://docs.google.com/spreadsheets/d/1QIQNFXe8dPf0RBkAZTZ6_PJZedd3YwOUpvsuW5NYVpM/edit?gid=1593614883#gid=1593614883", '_blank').focus(); // 替換為菲站測試表的實際 URL
             else if (id == "notes")
                 window.open("https://www.notion.so/B-f3c35a5068aa429ba1abf6286e77c675", '_blank').focus(); // 替換為資料庫的實際 URL
             else if (id == "resources")
                 window.open("https://www.notion.so/43c1714275d3469a94d9407eef4ccac7?pvs=4", '_blank').focus(); // 替換為工作區的實際 URL
+            else if (id == "tasks")
+                window.open("https://docs.google.com/spreadsheets/d/1H6RqB1sPKkFTQRT8oeEtMxXSVm0zVNDprRd7pvrz8yE/edit?gid=298914475#gid=298914475", '_blank').focus(); // 替換為更新測試表的實際 URL
 
         }
     </script>
