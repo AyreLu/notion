@@ -43,7 +43,7 @@
 
         /* 邊框樣式 */
         .border {
-            border: 1px solid #ffdc35; /* 邊框顏色 */
+            border: 3px solid #ffdc35; /* 邊框顏色 */
         }
 
         /* 當鼠標懸停時鏈接的樣式 */
@@ -60,10 +60,10 @@
         <!-- 每個導航鏈接都包含一個圖標和文字，並設置了一個 onclick 事件 -->
         <!-- 將 href 替換為目標 URL -->
         <a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> 首頁</a>
+        <a id="resources" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-wrench"></i> 工作區</a>
+        <a id="notes" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> 資料庫</a>
         <a id="tasks_cn" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> 測試表單cn</a>
         <a id="tasks_ph" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> 測試表單ph</a>
-        <a id="notes" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> 資料庫</a>
-        <a id="resources" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-wrench"></i> 工作區</a>
     </nav>
 
     <script>
