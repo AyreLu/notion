@@ -2,8 +2,6 @@
 <html>
 
 <head>
-    <!-- Font Awesome 圖標庫，用於顯示圖標 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <!-- Google 字體 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,9 +19,9 @@
         /* 導航欄的樣式 */
         .navMenu {
             font-family: 'Advent Pro', sans-serif; /* 字體設置 */
-            padding: 3px; /* 內邊距 */
+            padding: 8px; /* 內邊距 */
             text-align: center; /* 文字居中對齊 */
-            margin: 18px auto; /* 外邊距，自動居中 */
+            margin: 8px auto; /* 外邊距，自動居中 */
             width: fit-content; /* 寬度根據內容自適應 */
             background-color: transparent; /* 背景色透明 */
             border: none; /* 去除邊框 */
@@ -36,47 +34,53 @@
             text-transform: uppercase; /* 文字轉為大寫 */
             display: inline-block; /* 內聯塊級元素 */
             padding: 9px; /* 內邊距 */
+            margin: 0 15px; /* 調整每個項目之間的間距 */
             transition: background-color 0.3s; /* 加入過渡效果 */
         }
 
         /* 當鼠標懸停時鏈接的樣式 */
         .navMenu a:hover {
-            background-color: #FFFF37; /* 懸停時的背景色 */
+            background-color: #ffe66f; /* 懸停時的背景色 */
+        }
+
+        /* 自定義圖標的樣式 */
+        .navMenu img {
+            width: 20px; /* 調整圖標大小 */
+            height: auto;
+            vertical-align: middle; /* 垂直對齊文字 */
+            margin-right: 5px; /* 圖標和文字之間的間距 */
         }
     </style>
 </head>
 
-<body>
+<body><i>
 
     <!-- 導航欄 -->
     <nav class="navMenu">
-        <!-- 每個導航鏈接都包含一個圖標和文字，並設置了一個 onclick 事件 -->
+        <!-- 每個導航鏈接都包含一個自定義圖標和文字，並設置了一個 onclick 事件 -->
         <!-- 將 href 替換為目標 URL -->
-        <a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> 主頁</a>
-        <a id="dindandon" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-mug-saucer"></i> 訂便當</a>
-        <a id="resources" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-wrench"></i> 工作區</a>
-        <a id="notes" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> 資料庫</a>
-        <a id="business" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-money-bill-wave"></i> 加班申請</a>
-        <a id="tasks" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-calendar-week"></i> 版本測試</a>
-        <a id="tasks_cn" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> 菲站反饋更新</a>
-        <a id="tasks_ph" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> 陸站反饋更新</a>
+        <a id="home" onclick="navigate(this.id)" href="#"> <img src="https://i.ibb.co/W5F9q4V/PK.png" alt="PK"> 主頁</a>
+        <a id="resources" onclick="navigate(this.id)" href="#"> <img src="images/resources.png" alt="resources icon"> 工作區</a>
+        <a id="notes" onclick="navigate(this.id)" href="#"> <img src="images/notes.png" alt="notes icon"> 資料庫</a>
+        <a id="business" onclick="navigate(this.id)" href="#"> <img src="images/business.png" alt="business icon"> 加班申請</a>
+        <a id="tasks" onclick="navigate(this.id)" href="#"> <img src="images/tasks.png" alt="tasks icon"> 版本測試</a>
+        <a id="tasks_cn" onclick="navigate(this.id)" href="#"> <img src="images/tasks_cn.png" alt="tasks_cn icon"> 菲站反饋更新</a>
+        <a id="tasks_ph" onclick="navigate(this.id)" href="#"> <img src="images/tasks_ph.png" alt="tasks_ph icon"> 陸站反饋更新</a>
     </nav>
 
     <script>
         // 設定導航方向變量，可選 "horizontal" 或 "vertical"
         let direction = "horizontal"; 
         if (direction === "vertical") {
-            document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} i{width:15px; margin-right:5px} .navMenu{margin:3px}</style>`)
+            document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} img{width:15px; margin-right:5px} .navMenu{margin:3px}</style>`)
         }
 
         // 定義導航函數，根據鏈接的 id 打開對應的 URL
         function navigate(id) {
             if (id == 'home')
                 window.open("https://www.notion.so/PK-ea972993bc3c4598b014095ffec0edd5?pvs=4", '_blank').focus(); // 替換為主頁的實際 URL
-            else if (id == "dindandon")
-                window.open("https://dinbendon.net/do/login", '_blank').focus(); // 替換為訂便當的實際 URL
             else if (id == "resources")
-                window.open("https://www.notion.so/PK-43c1714275d3469a94d9407eef4ccac7", '_blank').focus(); // 替換為工作區的實際 URL
+                window.open("https://www.notion.so/43c1714275d3469a94d9407eef4ccac7?pvs=4", '_blank').focus(); // 替換為工作區的實際 URL
             else if (id == "notes")
                 window.open("https://www.notion.so/B-f3c35a5068aa429ba1abf6286e77c675", '_blank').focus(); // 替換為資料庫的實際 URL
             else if (id == "business")
