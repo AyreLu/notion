@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 
 <head>
     <!-- Google 字體 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <!-- 引入 FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* 全局設置，將 margin 和 padding 設為 0，並設置 box-sizing 為 border-box */
+        /* 全局設置 */
         * {
             margin: 0;
             padding: 0;
@@ -16,95 +18,68 @@
             box-sizing: border-box;
         }
 
-        /* 導航欄的樣式 */
+        /* 導航欄樣式 */
         .navMenu {
-            font-family: 'Advent Pro', sans-serif; /* 字體設置 */
+            font-family: 'Lato', sans-serif; /* 設置字體 */
             padding: 8px; /* 內邊距 */
-            text-align: center; /* 文字居中對齊 */
-            margin: 8px auto; /* 外邊距，自動居中 */
-            width: fit-content; /* 寬度根據內容自適應 */
+            text-align: center; /* 文字置中 */
+            width: fit-content; /* 寬度自適應內容 */
+            margin: 8px auto; /* 外邊距自動居中 */
             background-color: transparent; /* 背景色透明 */
             border: none; /* 去除邊框 */
         }
 
-        /* 導航鏈接的樣式 */
+        /* 基本按鈕樣式 */
         .navMenu a {
             color: #2eaadc; /* 文字顏色 */
             text-decoration: none; /* 去除下劃線 */
             text-transform: uppercase; /* 文字轉為大寫 */
-            display: inline-block; /* 內聯塊級元素 */
-            padding: 9px; /* 內邊距 */
-            margin: 0 15px; /* 調整每個項目之間的間距 */
-            transition: background-color 0.3s; /* 加入過渡效果 */
+            display: inline-block; /* 顯示為內聯塊元素 */
+            padding: 12px 20px; /* 內邊距 */
+            margin: 0 15px; /* 左右間距 */
+            transition: all 0.3s ease-in-out; /* 過渡效果 */
+            border-radius: 8px; /* 圓角效果 */
+            box-shadow: 0 4px #999; /* 3D 效果的陰影 */
+            font-size: 16px; /* 文字大小 */
         }
 
-        /* 當鼠標懸停時鏈接的樣式 */
+        /* 按鈕懸停效果 */
         .navMenu a:hover {
-            background-color: #FFF2CC; /* 懸停時的背景色 */
+            background-color: #FFF2CC; /* 懸停時背景色 */
+            box-shadow: 0 2px #666; /* 懸停時陰影調整 */
+            transform: translateY(2px); /* 懸停時位置下移 */
         }
 
-        /* 自定義圖標的樣式 */
-        .navMenu img {
-            width: 39px; /* 調整圖標大小 */
-            height: auto;
-            vertical-align: middle; /* 垂直對齊文字 */
-            margin-right: 3px; /* 圖標和文字之間的間距 */
-        }
+        /* 各按鈕獨立樣式 */
+        .btn-home { background-color: #4CAF50; color: white; }
+        .btn-food { background-color: #FF5722; color: white; }
+        .btn-resources { background-color: #673AB7; color: white; }
+        .btn-customer { background-color: #E91E63; color: white; }
+        .btn-day { background-color: #3F51B5; color: white; }
+        .btn-git { background-color: #009688; color: white; }
+        .btn-notes { background-color: #FFC107; color: white; }
+        .btn-business { background-color: #795548; color: white; }
+        .btn-tasks { background-color: #607D8B; color: white; }
+        .btn-tasks_ph { background-color: #9C27B0; color: white; }
+        .btn-tasks_cn { background-color: #00BCD4; color: white; }
     </style>
 </head>
 
 <body>
-
     <!-- 導航欄 -->
     <nav class="navMenu">
-        <!-- 每個導航鏈接都包含一個自定義圖標和文字，並設置了一個 onclick 事件 -->
-        <!-- 將 href 替換為目標 URL -->
-        <a id="home" onclick="navigate(this.id)" href="#"> <img src="https://i.ibb.co/Xxh8Zs2/follow.png" alt="follow"> 主頁</a>
-        <a id="food" onclick="navigate(this.id)" href="#"> <img src="https://i.ibb.co/1JGbyLd/buy.png" alt="buy"> 訂便當</a>
-        <a id="resources" onclick="navigate(this.id)" href="#"> <img src="https://i.ibb.co/hKjY2SD/gamerecord.png" alt="gamerecord"> 工作區</a>
-        <a id="customer" onclick="navigate(this.id)" href="#"> <img src="https://i.ibb.co/Wfw4mkq/customer1.png" alt="customer1"> 客服回報</a>
-        <a id="day" onclick="navigate(this.id)" href="#"> <img src="https://i.ibb.co/tJNYmLP/sign-in.png" alt="sign-in"> 行事曆</a>
-        <a id="git" onclick="navigate(this.id)" href="#"> <img src="https://i.ibb.co/qY0ptVL/hierarchy.png" alt="hierarchy"> 版本紀錄</a>
-        <a id="notes" onclick="navigate(this.id)" href="#"> <img src="https://i.ibb.co/QbVksZw/source.png" alt="source"> 資料庫</a>
-        <a id="business" onclick="navigate(this.id)" href="#"> <img src="https://i.ibb.co/9wKZkR1/commission.png" alt="commission"> 加班申請</a>
-        <a id="tasks" onclick="navigate(this.id)" href="#"> <img src="https://i.ibb.co/Km0bHxw/record.png" alt="record"> 版本測試</a>
-        <a id="tasks_ph" onclick="navigate(this.id)" href="#"> <img src="https://i.ibb.co/jf6yrDr/record2.png" alt="record2"> 菲站反饋更新</a>
-        <a id="tasks_cn" onclick="navigate(this.id)" href="#"> <img src="https://i.ibb.co/jf6yrDr/record2.png" alt="record2"> 陸站反饋更新</a>
+        <a id="home" class="btn-home" onclick="navigate(this.id)" href="#"><i class="fas fa-home"></i> 主頁</a>
+        <a id="food" class="btn-food" onclick="navigate(this.id)" href="#"><i class="fas fa-utensils"></i> 訂便當</a>
+        <a id="resources" class="btn-resources" onclick="navigate(this.id)" href="#"><i class="fas fa-briefcase"></i> 工作區</a>
+        <a id="customer" class="btn-customer" onclick="navigate(this.id)" href="#"><i class="fas fa-headset"></i> 客服回報</a>
+        <a id="day" class="btn-day" onclick="navigate(this.id)" href="#"><i class="fas fa-calendar-alt"></i> 行事曆</a>
+        <a id="git" class="btn-git" onclick="navigate(this.id)" href="#"><i class="fas fa-code-branch"></i> 版本紀錄</a>
+        <a id="notes" class="btn-notes" onclick="navigate(this.id)" href="#"><i class="fas fa-database"></i> 資料庫</a>
+        <a id="business" class="btn-business" onclick="navigate(this.id)" href="#"><i class="fas fa-briefcase"></i> 加班申請</a>
+        <a id="tasks" class="btn-tasks" onclick="navigate(this.id)" href="#"><i class="fas fa-tasks"></i> 版本測試</a>
+        <a id="tasks_ph" class="btn-tasks_ph" onclick="navigate(this.id)" href="#"><i class="fas fa-tasks"></i> 菲站反饋更新</a>
+        <a id="tasks_cn" class="btn-tasks_cn" onclick="navigate(this.id)" href="#"><i class="fas fa-tasks"></i> 陸站反饋更新</a>
     </nav>
-
-    <script>
-        // 設定導航方向變量，可選 "horizontal" 或 "vertical"
-        let direction = "horizontal"; 
-        if (direction === "vertical") {
-            document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} img{width:15px; margin-right:5px} .navMenu{margin:3px}</style>`)
-        }
-
-        // 定義導航函數，根據鏈接的 id 打開對應的 URL
-        function navigate(id) {
-            if (id == 'home')
-                window.open("https://www.notion.so/PK-ea972993bc3c4598b014095ffec0edd5?pvs=4", '_blank').focus(); // 替換為主頁的實際 URL
-            else if (id == "food")
-            window.open("https://dinbendon.net/do/login;jsessionid=716BA37A3ACD5A01AD60E34F2F0B1C3F", '_blank').focus(); // 替換為訂便當的實際 URL
-            else if (id == "resources")
-                window.open("https://www.notion.so/43c1714275d3469a94d9407eef4ccac7?pvs=4", '_blank').focus(); // 替換為工作區的實際 URL
-            else if (id == "customer")
-            window.open("https://www.notion.so/PK-Live-b4a0900b362c46df94182a4fd42ea112", '_blank').focus(); // 替換為客服回報的實際 URL
-            else if (id == "day")
-            window.open("https://www.notion.so/ba81a02eb2294d9899927b9a2766aca0", '_blank').focus(); // 替換為行事曆的實際 URL
-            else if (id == "git")
-            window.open("https://www.notion.so/42496429a09f4798b7c350b4ecb90237", '_blank').focus(); // 替換為版本紀錄的實際 URL
-            else if (id == "notes")
-                window.open("https://www.notion.so/B-f3c35a5068aa429ba1abf6286e77c675", '_blank').focus(); // 替換為資料庫的實際 URL
-            else if (id == "business")
-                window.open("https://www.femascloud.com/photons/", '_blank').focus(); // 替換為加班申請的實際 URL
-            else if (id == "tasks")
-                window.open("https://docs.google.com/spreadsheets/d/1JbCjDQky610S0tpyQTpc36GuM-1IC7gg2qG75B_1zk8/edit?gid=469239346#gid=469239346", '_blank').focus(); // 替換為版本測試的實際 URL
-            else if (id == "tasks_ph")
-                window.open("https://docs.google.com/spreadsheets/d/1QIQNFXe8dPf0RBkAZTZ6_PJZedd3YwOUpvsuW5NYVpM/edit?gid=1593614883#gid=1593614883", '_blank').focus(); // 替換為菲站反饋更新的實際 URL
-            else if (id == "tasks_cn")
-                window.open("https://docs.google.com/spreadsheets/d/1BEdTvXvBnKqO3goIGomWYUOWzh8vYhoWyYQH4Xq4zsw/edit?gid=1718004242#gid=1718004242", '_blank').focus(); // 替換為陸站反饋更新的實際 URL
-        }
-    </script>
 </body>
 
 </html>
